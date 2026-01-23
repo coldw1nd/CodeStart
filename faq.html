@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CodeStart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { padding-top: 3.5rem; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .navbar-item.is-active { color: #48c774 !important; background-color: transparent !important; }
+        .navbar-burger { color: #48c774 !important; }
+        
+        .footer { margin-top: auto; }
+        
+        .faq-answer { display: none; }
+        .faq-answer.is-active { display: block; }
+        .faq-question { cursor: pointer; }
+        .icon.is-rotated { transform: rotate(180deg); transition: transform 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top has-shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold is-size-4 has-text-success" href="index.html">
+                    <i class="fas fa-code mr-2"></i> CodeStart
+                </a>
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item">Главная</a>
+                    <a href="faq.html" class="navbar-item is-active">FAQ</a>
+                    <a href="contacts.html" class="navbar-item">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered mb-6">Частые вопросы</h1>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="card mb-4">
+                        <header class="card-header faq-question">
+                            <p class="card-header-title">Нужно ли знать математику?</p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon"><i class="fas fa-angle-down"></i></span>
+                            </button>
+                        </header>
+                        <div class="card-content faq-answer">
+                            <div class="content">Нет, для старта достаточно школьной арифметики.</div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <header class="card-header faq-question">
+                            <p class="card-header-title">Сколько длится обучение?</p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon"><i class="fas fa-angle-down"></i></span>
+                            </button>
+                        </header>
+                        <div class="card-content faq-answer">
+                            <div class="content">В среднем курс занимает 6 месяцев.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer has-background-dark has-text-white">
+        <div class="container has-text-centered">
+            <p class="is-size-7 has-text-grey">&copy; 2025 CodeStart. Все права защищены.</p>
+            <div class="buttons is-centered mt-4">
+                <a href="https://github.com/coldw1nd/CodeStart" target="_blank" class="button is-dark"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if (burgers.length > 0) {
+                burgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+            const accordions = document.querySelectorAll('.faq-question');
+            accordions.forEach(acc => {
+                acc.addEventListener('click', () => {
+                    const answer = acc.nextElementSibling;
+                    const icon = acc.querySelector('.icon');
+                    answer.classList.toggle('is-active');
+                    icon.classList.toggle('is-rotated');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

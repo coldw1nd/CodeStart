@@ -7,38 +7,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { padding-top: 3.5rem; } 
+        body { padding-top: 3.5rem; display: flex; flex-direction: column; min-height: 100vh; }
         
+        .navbar-item.is-active { color: #48c774 !important; background-color: transparent !important; }
         .navbar-burger { color: #48c774 !important; }
-
+        
         html { scroll-behavior: smooth; }
         .hero { background: linear-gradient(135deg, #48c774 0%, #3ec487 100%); }
         .hero-title, .hero-subtitle { color: white !important; }
         .feature-icon { font-size: 3rem; color: #48c774; margin-bottom: 1rem; }
+        .footer { margin-top: auto; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top has-shadow">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item has-text-weight-bold is-size-4 has-text-success" href="#">
+                <a class="navbar-item has-text-weight-bold is-size-4 has-text-success" href="index.html">
                     <i class="fas fa-code mr-2"></i> CodeStart
                 </a>
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
                 </a>
             </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div id="navMenu" class="navbar-menu">
                 <div class="navbar-end">
-                    <a href="#about" class="navbar-item">О платформе</a>
-                    <a href="#features" class="navbar-item">Преимущества</a>
-                    <a href="#contact" class="navbar-item">Контакты</a>
+                    <a href="index.html" class="navbar-item is-active">Главная</a>
+                    <a href="faq.html" class="navbar-item">FAQ</a>
+                    <a href="contacts.html" class="navbar-item">Контакты</a>
                 </div>
             </div>
         </div>
@@ -47,12 +44,8 @@
     <section class="hero is-medium is-success">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-1 hero-title">
-                    Стань программистом с нуля
-                </h1>
-                <p class="subtitle is-4 hero-subtitle">
-                    Интерактивная платформа с практикой в браузере.
-                </p>
+                <h1 class="title is-1 hero-title">Стань программистом с нуля</h1>
+                <p class="subtitle is-4 hero-subtitle">Интерактивная платформа с практикой в браузере.</p>
                 <a href="#features" class="button is-white is-large is-outlined">
                     <span>Начать обучение</span>
                     <span class="icon"><i class="fas fa-arrow-right"></i></span>
@@ -66,10 +59,7 @@
             <div class="columns is-vcentered">
                 <div class="column is-6">
                     <h2 class="title is-2">О нас</h2>
-                    <p class="is-size-5">
-                        CodeStart — это современный подход к обучению. Забудьте о скучных видеолекциях.
-                        У нас вы пишете код с первой минуты, а умная система проверяет его мгновенно.
-                    </p>
+                    <p class="is-size-5">CodeStart — это современный подход к обучению. Забудьте о скучных видеолекциях. У нас вы пишете код с первой минуты.</p>
                 </div>
                 <div class="column is-6 has-text-centered">
                     <i class="fas fa-laptop-code has-text-grey-light" style="font-size: 8rem;"></i>
@@ -83,21 +73,21 @@
             <h2 class="title is-2 has-text-centered mb-6">Преимущества</h2>
             <div class="columns">
                 <div class="column is-4">
-                    <div class="card p-5 has-text-centered h-100">
+                    <div class="box p-5 has-text-centered h-100">
                         <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                         <h3 class="title is-4">Скорость</h3>
                         <p>Сайт работает быстро на любом устройстве.</p>
                     </div>
                 </div>
                 <div class="column is-4">
-                    <div class="card p-5 has-text-centered h-100">
+                    <div class="box p-5 has-text-centered h-100">
                         <div class="feature-icon"><i class="fas fa-trophy"></i></div>
                         <h3 class="title is-4">Геймификация</h3>
                         <p>Получайте награды за решенные задачи.</p>
                     </div>
                 </div>
                 <div class="column is-4">
-                    <div class="card p-5 has-text-centered h-100">
+                    <div class="box p-5 has-text-centered h-100">
                         <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
                         <h3 class="title is-4">Карьера</h3>
                         <p>Помогаем найти работу после курса.</p>
@@ -107,28 +97,23 @@
         </div>
     </section>
 
-    <footer id="contact" class="footer has-background-dark has-text-white">
+    <footer class="footer has-background-dark has-text-white">
         <div class="container has-text-centered">
-            <p class="title is-5 has-text-white">Свяжитесь с нами</p>
-            <p class="mb-4">support@codestart.ru</p>
-            
-            <div class="buttons is-centered mb-4">
-                <a href="#" class="button is-dark"><i class="fab fa-telegram"></i></a>
-                <a href="#" class="button is-dark"><i class="fab fa-vk"></i></a>
-                <a href="#" class="button is-dark"><i class="fab fa-github"></i></a>
+            <p class="is-size-7 has-text-grey">&copy; 2025 CodeStart. Все права защищены.</p>
+            <div class="buttons is-centered mt-4">
+                <a href="https://github.com/coldw1nd/CodeStart" target="_blank" class="button is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub Repo</span>
+                </a>
             </div>
-
-            <p class="is-size-7 has-text-grey">
-                &copy; 2025 CodeStart. Все права защищены.
-            </p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-            if ($navbarBurgers.length > 0) {
-                $navbarBurgers.forEach( el => {
+            const burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if (burgers.length > 0) {
+                burgers.forEach(el => {
                     el.addEventListener('click', () => {
                         const target = el.dataset.target;
                         const $target = document.getElementById(target);
@@ -139,6 +124,5 @@
             }
         });
     </script>
-
 </body>
 </html>
