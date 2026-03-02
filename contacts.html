@@ -54,28 +54,39 @@
             <div class="columns">
                 <div class="column is-6">
                     <div class="box">
-                        <form action="#">
+                        <form id="feedbackForm">
                             <div class="field">
-                                <label class="label">Имя</label>
+                                <label class="label">ФИО <span class="has-text-danger">*</span></label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="text" placeholder="Ваше имя" required>
+                                    <input class="input" type="text" id="fullname" placeholder="Иванов Иван Иванович">
                                     <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
                                 </div>
+                                <p class="help" id="fullnameHelp">Введите фамилию, имя и отчество</p>
                             </div>
 
                             <div class="field">
-                                <label class="label">Email</label>
+                                <label class="label">Телефон <span class="has-text-danger">*</span></label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="email" placeholder="email@example.com" required>
+                                    <input class="input" type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                                    <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                                </div>
+                                <p class="help" id="phoneHelp">Формат: +7 (XXX) XXX-XX-XX</p>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Email <span class="has-text-danger">*</span></label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" id="email" placeholder="example@mail.ru">
                                     <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
                                 </div>
+                                <p class="help" id="emailHelp">Введите корректный email адрес</p>
                             </div>
 
                             <div class="field">
                                 <label class="label">Тема</label>
                                 <div class="control">
                                     <div class="select is-fullwidth">
-                                        <select>
+                                        <select id="topic">
                                             <option>Вопрос по курсу</option>
                                             <option>Техническая проблема</option>
                                             <option>Сотрудничество</option>
@@ -87,19 +98,32 @@
                             <div class="field">
                                 <label class="label">Сообщение</label>
                                 <div class="control">
-                                    <textarea class="textarea" placeholder="Напишите ваш вопрос..." rows="4"></textarea>
+                                    <textarea class="textarea" id="message" placeholder="Напишите ваш вопрос..." rows="4"></textarea>
                                 </div>
+                                <p class="help" id="messageHelp">До 500 символов</p>
                             </div>
 
                             <div class="field">
-                                <label class="checkbox">
-                                    <input type="checkbox" required>
-                                    Я согласен на обработку персональных данных
-                                </label>
+                                <div class="control">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="agreement" required>
+                                        Я согласен на обработку персональных данных
+                                    </label>
+                                </div>
                             </div>
 
-                            <div class="field mt-4">
-                                <button class="button is-success is-fullwidth">Отправить</button>
+                            <div class="field is-grouped mt-4">
+                                <div class="control is-expanded">
+                                    <button type="submit" class="button is-success is-fullwidth">
+                                        <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                                        <span>Отправить</span>
+                                    </button>
+                                </div>
+                                <div class="control">
+                                    <button type="reset" class="button is-light">
+                                        <span>Очистить</span>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -128,7 +152,7 @@
 
     <footer class="footer has-background-dark has-text-white">
         <div class="container has-text-centered">
-            <p class="is-size-7 has-text-grey">&copy; 2025 CodeStart. Все права защищены.</p>
+            <p class="is-size-7 has-text-grey">&copy; 2026 CodeStart. Все права защищены.</p>
             <div class="buttons is-centered mt-4">
                 <a href="https://github.com/coldw1nd/CodeStart" target="_blank" class="button is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
@@ -153,5 +177,8 @@
             }
         });
     </script>
+    
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/consoleLogger.js"></script>
 </body>
 </html>
